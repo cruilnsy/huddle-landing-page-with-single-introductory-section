@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400|Poppins:400,700&display=swap");
+
+:root{
+    --desktop-width: 1440px;
+    --mobile-width: 375px;
+    --breakpoint-medium-width: 900px;
+    --primary-violet: hsl(257, 40%, 49%);
+    --font-family-poppins: 'Poppins', Arial, Helvetica, sans-serif;
+    --font-family-open-sans: 'Open Sans', sans-serif;
+    --font-weight-small: 400;
+    --font-weight-large: 700;  
+    --root-font-size: 16px; 
+}
+
+/*** box sizing border-box for all elements ***/
+*,
+*::before,
+*::after{box-sizing:border-box;}
+body{margin:0; padding:0}
+a{text-decoration:none; color:inherit; cursor:pointer;}
+button{background-color:transparent; color:inherit; border-width:0; padding:0; cursor:pointer;}
+figure{margin:0;}
+input::-moz-focus-inner {border:0; padding:0; margin:0;}
+input:focus, button:focus {outline: none;}
+ul, ol, dd{margin:0; padding:0; list-style:none;}
+h1, h2, h3, h4, h5, h6{margin:0; font-size:inherit; font-weight:inherit;}
+p,pre{margin:0;}
+cite {font-style:normal;}
+fieldset{border-width:0; padding:0; margin:0;}
+img{width: 100%;}
+
+
+/*** main css ***/
+body {
+    font-family: var(--font-family-open-sans);
+    font-size: var(--root-font-size);
+    margin: auto;
+    min-width: var(--mobile-width);
+    max-width: 60%;
+    background-image: url("images/bg-mobile.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-color: var(--primary-violet);
+    color: white;
+    text-align: center;
+}
+
+header {
+    text-align: left;
+}
+header .logo {
+    width: 35%;
+    margin: 2rem;
+}
+
+#product-overview {
+    margin: 1rem 2rem;
+} 
+#community-register {
+    margin: 3rem 2rem;
+}
+
+#community-register h1 {
+    font-family: var(--font-family-poppins);
+    font-size: 1.5rem;
+}
+
+#community-register p{
+    margin-top: 1rem;
+    font-weight: var(--font-weight-small);
+    /* filter: brightness(80%); */
+    opacity: 0.7;
+    line-height: 1.6rem;
+    
+}
+
+#community-register button {
+    padding: 1rem 5rem;
+    border-radius: 2.5rem;
+    background-color: white;
+    color: var(--primary-violet);
+    font-size: 0.8rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 7px -2px black ;
+}
+
+.social-media {
+    margin: 3rem 0 2rem;
+}
+.social-media a {
+    width: 30px;
+    height: 30px;
+    font-weight: var(--font-weight-small);
+    display: inline-flex;
+    border-radius: 50%;
+    border: 1px solid white;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    margin: .3rem;
+}
+
+@media screen and (min-width: 900px) {
+    body {
+        background-image: url("images/bg-desktop.svg");
+        background-size: 80%;
+        min-width: var(--breakpoint-medium-width);
+        max-width: 80%;
+    }
+    header .logo {
+        width: 200px;
+    }
+    main {
+        display: flex;
+    }
+    #product-overview {
+        flex: 1.3;
+    }
+    #community-register {
+        flex: 1;
+        text-align: left;
+        position: relative;
+        height: 54vh;
+    }
+    .social-media {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    body {
+        max-width: 70%;
+    }
+}
+
